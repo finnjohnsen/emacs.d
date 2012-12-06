@@ -15,10 +15,9 @@
 (require 'move-line)
 (global-set-key [M-up] 'move-line-up)
 (global-set-key [M-down] 'move-line-down)
-
+(key-chord-define-global ".."     'move-region-up)
 
 (set-goal-column 1)
-
 
 
 

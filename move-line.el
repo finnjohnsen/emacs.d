@@ -16,8 +16,13 @@
     (funcall func)
      (move-to-column column)))
 
+(defun more-region (&optional up)
+  (message "move region not yet implemented"))
+ 
 (defun move-current-line (&optional up)
   "moves current line up or down, argument decides which way"
+  (if mark-active
+  (move-region up)
   (save-column(lambda ()
 		(if up (progn
 			 (move-beginning-of-line())
@@ -31,10 +36,4 @@
 		    (kill-whole-line)
 		    (next-line)
 		    (yank)
-		    (previous-line))))))
-
-
-
-
-
-
+		    (previous-line)))))))
