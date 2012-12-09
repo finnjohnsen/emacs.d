@@ -10,10 +10,10 @@
   (interactive)
   (move-current-line))
 
-(defun save-column (func)
-  "restored current column after invoking func"
-  (let ((column (current-column)))
-    (funcall func)
+(defmacro save-column (&rest body)
+  "Save current column and restore after body"
+  `(let ((column (current-column)))
+     ,@body
      (move-to-column column)))
 
 (defun more-region (&optional up)
@@ -23,8 +23,7 @@
   "moves current line up or down, argument decides which way"
   (if mark-active
   (move-region up)
-  (save-column(lambda ()
-		(if up (progn
+  (save-column(if up (progn
 			 (move-beginning-of-line())
 			 (kill-whole-line)
 			 (previous-line)
@@ -36,4 +35,4 @@
 		    (kill-whole-line)
 		    (next-line)
 		    (yank)
-		    (previous-line)))))))
+		    (previous-line))))))
