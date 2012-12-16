@@ -1,3 +1,5 @@
+(require 'package)
+(package-initialize)
 (setq initial-scratch-message "")
 (put 'set-goal-column 'disabled nil)
 (setq make-backup-files nil)
@@ -16,6 +18,9 @@
 (global-set-key [M-up] 'move-line-up)
 (global-set-key [M-down] 'move-line-down)
 (key-chord-define-global ".."     'move-region-up)
+(key-chord-define-global ",."     'next-multiframe-window)
+(key-chord-define-global ".,"     'previous-multiframe-window)
+
 
 (set-goal-column 1)
 
