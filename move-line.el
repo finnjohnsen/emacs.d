@@ -12,8 +12,8 @@
 
 (defmacro save-column (&rest body)
   "Save current column and restore after body"
-  `(let ((column (current-column)))
-     ,@body
+   `(let ((column (current-column)))
+      ,body
      (move-to-column column)))
 
 (defun more-region (&optional up)

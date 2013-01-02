@@ -1,5 +1,17 @@
+;package
 (require 'package)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
+
+(when (not (package-installed-p 'magit)) (package-install 'magit))
+(when (not (package-installed-p 'nrepl)) (package-install 'nrepl))
+
+;disable backup
+(setq backup-inhibited t)
+;disable auto save
+(setq auto-save-default nil)
+
 (setq initial-scratch-message "")
 (put 'set-goal-column 'disabled nil)
 (setq make-backup-files nil)
