@@ -1,54 +1,23 @@
-;package
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (when (not (package-installed-p 'magit)) (package-install 'magit))
-(when (not (package-installed-p 'nrepl)) (package-install 'nrepl))
 
-;disable backup
-(setq backup-inhibited t)
-;disable auto save
-(setq auto-save-default nil)
+(add-to-list 'load-path user-emacs-directory)
+(eval-after-load 'clojure (require 'setup-clojure))
+(eval-after-load 'keychord (require 'setup-keychord))
+(eval-after-load 'javascript (require 'setup-javascript))
 
 (setq initial-scratch-message "")
-(put 'set-goal-column 'disabled nil)
-(setq make-backup-files nil)
-(put 'eval-expression 'disabled nil)
-(show-paren-mode) 
-(setq global-linum-mode t)
-(setq column-number-mode t)
-(add-to-list 'load-path "~/.emacs.d/addons/")
-(require 'key-chord)
-(key-chord-mode 1)
-(key-chord-define-global "xe"     'eval-last-sexp)
+(setq backup-directory-alist `(("." . "/tmp/")))
 
 
-(add-to-list 'load-path "~/.emacs.d")
-(require 'move-line)
-(global-set-key [M-up] 'move-line-up)
-(global-set-key [M-down] 'move-line-down)
-(key-chord-define-global ".."     'move-region-up)
-(key-chord-define-global ",."     'next-multiframe-window)
-(key-chord-define-global ".,"     'previous-multiframe-window)
-
-
-(set-goal-column 1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+(key-chord-define-global ".." 'move-region-up)
+(key-chord-define-global ",." 'next-multiframe-window)
+(key-chord-define-global ".," 'previous-multiframe-window) 
+(key-chord-define-global ",." 'next-multiframe-window)
+(key-chord-define-global ".," 'previous-multiframe-window) 
+(key-chord-define-global ";;" '(lambda()(interactive)(enlarge-window 5)))
+(key-chord-define-global "::" '(lambda()(interactive)(shrink-window 5)))
