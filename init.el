@@ -14,9 +14,6 @@
 (setq backup-directory-alist `(("." . "/tmp/")))
 
 
-(key-chord-define-global ".." 'move-region-up)
-(key-chord-define-global ",." 'next-multiframe-window)
-(key-chord-define-global ".," 'previous-multiframe-window) 
 (key-chord-define-global ",." 'next-multiframe-window)
 (key-chord-define-global ".," 'previous-multiframe-window) 
 (key-chord-define-global ";;" '(lambda()(interactive)(enlarge-window 5)))

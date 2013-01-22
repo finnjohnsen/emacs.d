@@ -1,7 +1,11 @@
 (when (not (package-installed-p 'nrepl)) (package-install 'nrepl))
 (when (not (package-installed-p 'paredit)) (package-install 'paredit))
 (when (not (package-installed-p 'rainbow-delimiters)) (package-install 'rainbow-delimiters))
+
 (add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode) 
+(add-hook 'clojure-mode-hook 'show-paren-mode) 
+
 
 (defun override-slime-repl-bindings-with-paredit ()
   (define-key slime-repl-mode-map
