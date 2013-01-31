@@ -7,8 +7,12 @@
 
 (add-to-list 'load-path user-emacs-directory)
 (eval-after-load 'clojure (require 'setup-clojure))
+(eval-after-load 'nrepl-autotest (require 'setup-nrepl-autotest))
+
+
 (eval-after-load 'keychord (require 'setup-keychord))
 (eval-after-load 'javascript (require 'setup-javascript))
+
 
 (setq initial-scratch-message "")
 (setq backup-directory-alist `(("." . "/tmp/")))
