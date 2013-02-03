@@ -1,4 +1,4 @@
-(setq clojure-my-tests "(clojure.test/run-tests 'howru.test.repo-test)")
+(setq clojure-my-tests "(clojure.test/run-all-tests)")
 (setq notify-command "notify-send Test \"%s\"")
 
 (defun run-my-tests ()
