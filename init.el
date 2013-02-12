@@ -4,6 +4,7 @@
 (package-initialize)
 
 (when (not (package-installed-p 'magit)) (package-install 'magit))
+(when (not (package-installed-p 'undo-tree)) (package-install 'undo-tree))
 
 (add-to-list 'load-path user-emacs-directory)
 (eval-after-load 'clojure (require 'setup-clojure))
