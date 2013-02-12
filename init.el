@@ -15,9 +15,11 @@
 (when (not (package-installed-p 'undo-tree)) (package-install 'undo-tree))
 
 (add-to-list 'load-path user-emacs-directory)
-(eval-after-load 'clojure (require 'setup-clojure))
+(eval-after-load 'clojure-mode (require 'setup-clojure))
 (eval-after-load 'keychord (require 'setup-keychord))
-(eval-after-load 'javascript (require 'setup-javascript))
+;(eval-after-load 'javascript-mode (require 'setup-javascript))
+
+(require 'setup-smex)
 
 (setq initial-scratch-message "")
 (setq backup-directory-alist `(("." . "/tmp/")))
