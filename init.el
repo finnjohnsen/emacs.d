@@ -27,10 +27,16 @@
 (key-chord-define-global ";;" '(lambda()(interactive)(enlarge-window 5)))
 (key-chord-define-global "::" '(lambda()(interactive)(shrink-window 5)))
 
+
 (ido-mode t)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
+
+;; Theme:
 (when (not (package-installed-p 'zenburn-theme)) (package-install 'zenburn-theme))
 (load-theme 'zenburn)
+
+;(setq resize-emacs-command "/usr/bin/wmctrl -r emacs -e 0,15,15,1200,1200")
+;(start-process "wmctrl" "foo" resize-emacs-command)
