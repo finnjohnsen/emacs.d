@@ -2,7 +2,7 @@
   '(clojure-mode
   clojure-test-mode
   nrepl
-  paredit
+  paren
   rainbow-delimiters))
 (dolist (p clojure-packages)
   (unless (package-installed-p p)
@@ -17,6 +17,13 @@
   (unless (get-buffer "*nrepl*") 
       (nrepl-jack-in)))
 
+(defun nrepl-restart() 
+  (interactive)
+  (progn
+      (nrepl-quit)
+      (nrepl-jack-in t)))
+
 (add-hook 'clojure-mode-hook 'start-nrepl-if-not-started)
 
 (provide 'setup-clojure)
+
