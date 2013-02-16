@@ -15,7 +15,7 @@
 (when (not (package-installed-p 'undo-tree)) (package-install 'undo-tree))
 
 (add-to-list 'load-path user-emacs-directory)
-(eval-after-load 'clojure-mode (require 'setup-clojure))
+(eval-after-load 'clojure (require 'setup-clojure))
 (eval-after-load 'keychord (require 'setup-keychord))
 ;(eval-after-load 'javascript-mode (require 'setup-javascript))
 
@@ -31,6 +31,8 @@
 
 
 (ido-mode t)
+(line-number-mode)
+(column-number-mode)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
