@@ -10,6 +10,7 @@
   
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode) 
+(setq show-paren-style 'expression)
 (add-hook 'clojure-mode-hook 'show-paren-mode) 
 (add-hook 'clojure-mode-hook 'clojure-test-mode)
 
