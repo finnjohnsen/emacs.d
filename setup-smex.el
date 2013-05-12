@@ -2,5 +2,4 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-majore-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'smex-extended-command)
 (provide 'setup-smex)
