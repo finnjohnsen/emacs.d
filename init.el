@@ -4,27 +4,7 @@
 (package-initialize)
 
 (when (not (package-installed-p 'magit)) (package-install 'magit))
-(when (not (package-installed-p 'undo-tree)) (package-install 'undo-tree))
 
-(add-to-list 'load-path user-emacs-directory)
-(eval-after-load 'clojure (require 'setup-clojure))
-(eval-after-load 'keychord (require 'setup-keychord))
-;(eval-after-load 'javascript-mode (require 'setup-javascript))
-
-(require 'setup-smex)
-
-; Keep emacs Custom-settings in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
-
-
-(key-chord-define-global ",." 'next-multiframe-window)
-(key-chord-define-global ".," 'previous-multiframe-window) 
-(key-chord-define-global ";;" '(lambda()(interactive)(enlarge-window 5)))
-(key-chord-define-global "::" '(lambda()(interactive)(shrink-window 5)))
-
-;; Turn off mouse interface early in startup to avoid momentary display
-;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
@@ -41,7 +21,6 @@
 (line-number-mode)
 (column-number-mode)
 (global-linum-mode 1) ; Show line numbers on buffers
-(show-paren-mode 1) ; Highlight parenthesis pairs
 (setq blink-matching-paren-distance nil) ; Blinking parenthesis
 (setq undo-limit 100000)                       ; Increase number of undo
 (defalias 'yes-or-no-p 'y-or-n-p)              ; y/n instead of yes/no
