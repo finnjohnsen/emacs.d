@@ -31,8 +31,21 @@
 
 
 ;; Theme:
+
 (when (not (package-installed-p 'zenburn-theme)) (package-install 'zenburn-theme))
-(load-theme 'zenburn)
+(load-theme 'zenburn t)
 
 ;(setq resize-emacs-command "/usr/bin/wmctrl -r emacs -e 0,15,15,1200,1200")
 ;(start-process "wmctrl" "foo" resize-emacs-command)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("146d24de1bb61ddfa64062c29b5ff57065552a7c4019bee5d869e938782dfc2a" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
