@@ -2,6 +2,8 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
+(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
+  (package-refresh-contents))
 
 (when (not (package-installed-p 'magit)) (package-install 'magit))
 
@@ -14,7 +16,7 @@
 ; no junk in scratch
 (setq initial-scratch-message "")
 
-(setq make-backup-files nil) 
+(setq make-backup-files nil)
 ;(setq backup-directory-alist `(("." . "/tmp/")))
 
 (ido-mode t)
