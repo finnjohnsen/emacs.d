@@ -6,6 +6,7 @@
   (package-refresh-contents))
 
 (when (not (package-installed-p 'magit)) (package-install 'magit))
+(when (not (package-installed-p 'yaml-mode)) (package-install 'yaml-mode))
 
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -47,7 +48,7 @@
  '(custom-safe-themes
    (quote
     ("146d24de1bb61ddfa64062c29b5ff57065552a7c4019bee5d869e938782dfc2a" default)))
- '(package-selected-packages (quote (## zenburn-theme magit))))
+ '(package-selected-packages (quote (yaml-mode ## zenburn-theme magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
