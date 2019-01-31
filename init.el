@@ -31,7 +31,11 @@
 (when (not (package-installed-p 'zenburn-theme)) (package-install 'zenburn-theme))
 (load-theme 'zenburn t)
 
-(if (member "--magit" command-line-args) (magit-status "./"))
+(if (member "--magit" command-line-args)
+    (progn 
+      (magit-status "./")
+      (delete-other-windows)))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
