@@ -27,6 +27,8 @@
 (setq-default indent-tabs-mode nil) ;Use spaces instead of tabs
 (setq tab-width 4) ; Length of tab is 4 SPC
 
+; magit log vis ekte tidspunkt
+(set-default 'magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
 
 (when (not (package-installed-p 'zenburn-theme)) (package-install 'zenburn-theme))
 (load-theme 'zenburn t)
@@ -42,8 +44,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (clojure-mode cljsbuild-mode zenburn-theme yaml-mode magit))))
+   '(clojure-mode cljsbuild-mode zenburn-theme yaml-mode magit)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
