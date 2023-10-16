@@ -52,7 +52,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-
+(xterm-mouse-mode)
 
 ;; check OS type
 (cond
