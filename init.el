@@ -20,7 +20,7 @@
 (setq make-backup-files nil)
 (line-number-mode)
 (column-number-mode)
-(global-linum-mode 1) ; Show line numbers on buffers
+(display-line-numbers-mode)
 (setq blink-matching-paren-distance nil) ; Blinking parenthesis
 (setq undo-limit 100000)                       ; Increase number of undo
 (defalias 'yes-or-no-p 'y-or-n-p)              ; y/n instead of yes/noh
@@ -53,3 +53,21 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+
+;; check OS type
+(cond
+ ((string-equal system-type "windows-nt") ; Microsoft Windows
+  (progn
+    (message "Microsoft Windows")))
+ ((string-equal system-type "darwin") ; Mac OS X
+  (progn
+    (setq mac-option-key-is-meta nil)
+    (setq mac-command-key-is-meta t)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier nil)
+    (message "Mac OS X")))
+ ((string-equal system-type "gnu/linux") ; linux
+  (progn
+    (message "Linux"))))
