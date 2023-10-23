@@ -47,6 +47,7 @@
 
 ; Keybinds
 (global-set-key (kbd "C-c /") 'comment-region)
+(global-set-key (kbd "C-c ?") 'uncomment-region)
 
 ;; check OS type
 (cond
