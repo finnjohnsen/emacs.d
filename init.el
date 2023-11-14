@@ -6,6 +6,7 @@
 (unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
   (package-refresh-contents))
 
+(when (not (package-installed-p 'xclip)) (package-install 'xclip))
 (when (not (package-installed-p 'magit)) (package-install 'magit))
 (when (not (package-installed-p 'yaml-mode)) (package-install 'yaml-mode))
 (when (not (package-installed-p 'clojure-mode)) (package-install 'clojure-mode))
@@ -64,3 +65,5 @@
  ((string-equal system-type "gnu/linux") ; linux
   (progn
     (message "Linux"))))
+
+(xclip-mode 1)
