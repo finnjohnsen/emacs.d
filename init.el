@@ -44,8 +44,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("b23f3067e27a9940a563f1fb3bf455aabd0450cb02c3fa4ad43f75a583311216" default))
  '(package-selected-packages
-   '(xclip zig-mode clojure-mode cljsbuild-mode zenburn-theme yaml-mode magit)))
+   '(nordic-night-theme xclip zig-mode clojure-mode cljsbuild-mode yaml-mode magit)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -76,3 +78,12 @@
     (message "Linux"))))
 
 (xclip-mode 1)
+
+(use-package nordic-night-theme
+  :ensure t
+  :config
+  ;; Use this for the darker version
+  (load-theme 'nordic-midnight t)
+  ;(load-theme 'nordic-night t)
+  )
+
