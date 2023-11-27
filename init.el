@@ -31,9 +31,6 @@
 ; magit log vis ekte tidspunkt
 (set-default 'magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
 
-(when (not (package-installed-p 'zenburn-theme)) (package-install 'zenburn-theme))
-(load-theme 'zenburn t)
-
 (if (member "--magit" command-line-args)
     (progn 
       (magit-status "./")
