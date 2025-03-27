@@ -10,6 +10,7 @@
 (when (not (package-installed-p 'magit)) (package-install 'magit))
 (when (not (package-installed-p 'yaml-mode)) (package-install 'yaml-mode))
 (when (not (package-installed-p 'clojure-mode)) (package-install 'clojure-mode))
+(when (not (package-installed-p 'org)) (package-install 'org))
 
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -79,8 +80,7 @@
 (use-package nordic-night-theme
   :ensure t
   :config
-  ;; Use this for the darker version
-  (load-theme 'nordic-midnight t)
-  ;(load-theme 'nordic-night t)
-  )
+  ;(load-theme 'nordic-midnight t)
+  (load-theme 'nordic-night t))
 
+(mapc 'load (file-expand-wildcards "~/.emacs.d/package-configs/*.el"))
